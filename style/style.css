@@ -94,7 +94,7 @@ header .container {
  * Main Body ------------------------------
  */
 
-/* ----- Hero Section ----- */
+/* ----- Section: Hero ----- */
 .hero {
     background-image: linear-gradient(
         to bottom,
@@ -149,7 +149,6 @@ header .container {
     width: auto;
     padding: 17px 24px;
     gap: 3px;
-    /* position: absolute; */
 }
 
 .hero .img-container .box-1 {
@@ -210,6 +209,44 @@ header .container {
     max-width: 350px;
     align-self: center;
     margin-right: -90px;
+}
+
+/* ----- Section: Change Your Habit ----- */
+.habits-section {
+    padding-top: 100px;
+    gap: 40px;
+}
+
+.habits-section .intro {
+    align-items: center;
+}
+
+.habits-section .intro .heading,
+.habits-section .intro .text,
+.habits-section .habit .heading,
+.habits-section .habit .text {
+    text-align: center;
+}
+
+.habits-section .habit {
+    align-items: center;
+    gap: 6px;
+}
+
+.habits-section .habit .heading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 22px;
+}
+
+.habits-section .habit .text {
+    max-width: 650px;
+}
+
+.habits-section .habit img {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    max-width: 200px;
 }
 
 /* 
