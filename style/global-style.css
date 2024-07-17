@@ -1,0 +1,107 @@
+/* Roots
+========================================================================== */
+/*
+ * Global Fonts and Colors ---------
+ * Font: 'Inter', sans-serif
+ * Primary Color: #E6533C
+ * Text Color: #FFFFFF
+ * Others:
+ */
+
+:root {
+    --content-width: 1060px;
+    --gap: 20px;
+    --column-padding: 10px;
+
+    --primary-color: #e6533c;
+    --text-color: #ffffff;
+
+    --primary-font: 'Inter', sans-serif;
+}
+
+/* Global CSS Style
+========================================================================== */
+* {
+    transition: all 0.2s;
+    font-family: var(--primary-font);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+/*
+ * Sections and columns Structure ---------
+ */
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap);
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: var(--content-width);
+}
+.row-full {
+    max-width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--content-width);
+    gap: var(--gap);
+    padding: var(--column-padding);
+}
+
+/*
+ * Text Styles ---------
+ */
+.heading {
+    color: var(--text-color);
+    line-height: 1.2em;
+    margin: 0;
+    font-weight: 900;
+}
+
+h1.heading {
+    font-size: 78px;
+}
+
+h2.heading {
+    font-size: 48px;
+}
+
+h3.heading {
+    font-size: 28px;
+    line-height: 1.5em;
+}
+
+.text {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.8em;
+    margin: 0;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+.text-nogap {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+}
