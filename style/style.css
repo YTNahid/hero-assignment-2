@@ -6,6 +6,22 @@ body {
     background: black;
 }
 
+/* Header and Footer Logo */
+header .logo-text,
+footer .logo-text {
+    color: var(--primary-color);
+    font-weight: 800;
+    font-style: italic;
+}
+
+header .logo-text {
+    font-size: 36px;
+}
+
+footer .logo-text {
+    font-size: 70px;
+}
+
 /* -- Buttons -- */
 .button-global {
     display: flex;
@@ -54,14 +70,7 @@ header .container {
     align-items: center;
 }
 
-.logo-text {
-    color: var(--primary-color);
-    font-size: 36px;
-    font-weight: 800;
-    font-style: italic;
-}
-
-.nav-menu {
+header .nav-menu {
     display: flex;
     gap: 20px;
     align-self: flex-end;
@@ -72,21 +81,21 @@ header .container {
     padding: 4px;
 }
 
-.nav-menu .menu-item a {
+header .nav-menu .menu-item a {
     display: block;
     border-radius: 1000px;
     padding: 8px 20px;
 }
 
-.nav-menu .menu-item :hover {
+header .nav-menu .menu-item :hover {
     background-color: var(--primary-color);
 }
 
-.nav-menu .menu-item.active a {
+header .nav-menu .menu-item.active a {
     background-color: var(--primary-color);
 }
 
-.nav-menu li {
+header .nav-menu li {
     list-style: none;
 }
 
@@ -213,7 +222,7 @@ header .container {
 
 /* ----- Section: Change Your Habit ----- */
 .habits-section {
-    padding-top: 100px;
+    padding-top: 90px;
     gap: 40px;
 }
 
@@ -248,12 +257,12 @@ header .container {
 
 /* ----- Section: Run an Extra Mile Easily ----- */
 .run-section {
-    padding-top: 100px;
+    padding-top: 90px;
 }
 
 .run-section .container {
     border-radius: 18px;
-    background: rgb(34, 34, 34);
+    background: var(--bg-color);
     padding: 20px;
 }
 
@@ -278,6 +287,211 @@ header .container {
     align-self: flex-end;
 }
 
+/* ----- Section: BMI Calculator ----- */
+
+.bmi-section .intro {
+    max-width: 650px;
+    padding-top: 90px;
+    padding-bottom: 80px;
+}
+
+.bmi-section .container {
+    background-color: var(--bg-color);
+    padding: 50px 0px;
+}
+
+.bmi-section .table-container {
+    width: 45%;
+}
+
+.bmi-section .calc-container {
+    width: 55%;
+}
+
+.bmi-section .bmi-table {
+    border-collapse: collapse;
+    margin-top: 35px;
+    max-width: 330px;
+}
+
+.bmi-section .bmi-table th,
+.bmi-section .bmi-table td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    color: white;
+    padding: 15px 18px;
+}
+
+.bmi-section .bmi-table th {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.bmi-section .bmi-table td {
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+.bmi-section .bmi-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.bmi-section .bmi-form .col-half {
+    width: calc(50% - 12px / 2);
+}
+
+.bmi-section .bmi-form .col-full {
+    width: 100%;
+}
+
+.bmi-section .bmi-form .item {
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 15px 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+}
+
+.bmi-section .bmi-form .item::placeholder {
+    opacity: 1;
+}
+
+.bmi-section .bmi-form select {
+    appearance: none;
+    background: url('../images/down.png') no-repeat right 20px center / 15px !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.bmi-section .bmi-form select > option {
+    color: black;
+}
+
+.bmi-section .bmi-form button {
+    margin-top: 15px;
+}
+
+/* ----- Section: Meet Our Team ----- */
+.team-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.team-section .intro {
+    align-items: center;
+    max-width: 600px;
+}
+
+.team-section .intro .heading,
+.team-section .intro .text {
+    text-align: center;
+}
+
+.team-section .team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 272px);
+    gap: 20px;
+    width: 100%;
+    max-width: var(--content-width);
+    background-color: var(--bg-color);
+    border-radius: 18px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.team-section .team .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+    padding: 16px 20px;
+}
+
+.team-section .team .item1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/trainer1.png');
+}
+.team-section .team .item2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/trainer2.png');
+}
+.team-section .team .item3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/trainer3.png');
+}
+.team-section .team .item4 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/trainer4.png');
+}
+.team-section .team .item5 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/trainer5.png');
+}
+.team-section .team .item6 {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/trainer6.png');
+}
+
 /* 
  * Footer ------------------------------
  */
+
+footer {
+    background: var(--bg-color);
+}
+
+footer .contents {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+footer .menu-container .heading,
+footer .service-container .heading {
+    font-weight: 700;
+}
+
+footer .logo-container {
+    width: 44%;
+}
+
+footer .menu-container {
+    width: 28%;
+    padding-left: 50px;
+}
+
+footer .service-container {
+    width: 28%;
+    padding-left: 50px;
+}
+
+footer .nav-menu {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    padding: 0;
+}
+
+footer .nav-menu .menu-item a {
+    display: block;
+    padding: 8px 0px;
+    opacity: 0.5;
+}
+
+footer .nav-menu .menu-item :hover {
+    color: var(--primary-color);
+}
+
+footer .nav-menu li {
+    list-style: none;
+}
+
+footer .copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+footer .copyright .text {
+    font-size: 16px;
+    text-align: center;
+}
