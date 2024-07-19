@@ -104,6 +104,10 @@ h4.heading {
     margin-bottom: 15px;
 }
 
+img {
+    width: 100%;
+}
+
 a {
     color: var(--text-color);
     text-decoration: none;
@@ -116,6 +120,10 @@ ul {
 @media only screen and (max-width: 576px) {
     .row {
         flex-direction: column;
+    }
+
+    .row > div.column {
+        width: 100%;
     }
 
     /* Text Style */
@@ -133,9 +141,5 @@ ul {
 
     h4.heading {
         font-size: 18px;
-    }
-
-    .text {
-        line-height: 1.3em;
     }
 }

@@ -129,6 +129,7 @@ header .nav-menu li {
 }
 
 .hero .hero-contents .heading {
+    width: 530px;
     max-width: 530px;
 }
 
@@ -168,11 +169,6 @@ header .nav-menu li {
     position: absolute;
     right: -40px;
     top: 130px;
-}
-
-.hero .img-container .box-2 {
-    position: absolute;
-    bottom: 0;
 }
 
 .hero .img-container .box .count {
@@ -396,7 +392,6 @@ header .nav-menu li {
 .team-section .team {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 272px);
     gap: 20px;
     width: 100%;
     max-width: var(--content-width);
@@ -410,6 +405,7 @@ header .nav-menu li {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    height: 272px;
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat;
@@ -525,18 +521,206 @@ footer .copyright .text {
 @media only screen and (max-width: 576px) {
     /* -- Buttons -- */
     .button-global {
-        width: 224px;
+        width: 160px;
         font-size: 14px;
         padding: 14px 0;
     }
 
     /* Header */
+    header {
+        padding-top: 20px;
+    }
+
     header .nav-menu {
         display: none;
     }
 
-    /* Footer Logo */
+    /* ----- Section: Hero ----- */
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero .hero-contents .heading {
+        max-width: 300px;
+    }
+
+    .hero .hero-contents .heading span {
+        font-size: 74px;
+    }
+
+    .hero .hero-contents .text {
+        font-size: 14px;
+    }
+
+    .hero .hero-contents .btn-container {
+        flex-direction: row;
+    }
+
+    .hero .img-container .box {
+        padding: 6px 15px;
+    }
+
+    .hero .img-container .box .count {
+        color: white;
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .hero .img-container .box .box-text {
+        font-size: 12px;
+    }
+
+    .hero .img-container .box-1 {
+        right: 20px;
+        top: 60px;
+    }
+
+    .hero .img-container .box-2 {
+        padding: 10px 20px 12px 55px;
+        bottom: 230px;
+        left: 20px;
+    }
+
+    .hero .img-container .box-2:before {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+
+        left: 15px;
+    }
+
+    .hero .img-container .box-2 .count {
+        font-size: 20px;
+    }
+
+    .hero .img-container .box-2 .box-text {
+        font-size: 14px;
+    }
+
+    .hero .img-container .hero-img {
+        margin-right: 0px;
+    }
+
+    /* ----- Section: Change Your Habit ----- */
+    .habits-section {
+        padding-top: 40px;
+    }
+
+    .habits-section .habits {
+        max-width: 280px;
+        gap: 25px;
+    }
+
+    /* ----- Section: Run an Extra Mile Easily ----- */
+    .run-section {
+        padding: 40px 10px 0px 10px;
+    }
+
+    .run-section .container {
+        border-radius: 12px;
+        padding: 20px;
+        max-width: 480px;
+    }
+
+    .run-section .contents {
+        padding: 20px 10px 10px 10px;
+    }
+
+    .run-section .img-container img {
+        margin-top: 15px;
+        border-radius: 12px;
+        max-width: 100%;
+    }
+
+    /* ----- Section: BMI Calculator ----- */
+    .bmi-section .intro {
+        padding-top: 60px;
+        padding-bottom: 20px;
+        max-width: 480px;
+    }
+
+    .bmi-section .container {
+        padding: 30px 0px;
+    }
+
+    .bmi-section .bmi-table {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .bmi-section .bmi-table th {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .bmi-section .bmi-form .item {
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .bmi-section .bmi-form select {
+        background: url('../images/down.png') no-repeat right 20px center / 12px !important;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* ----- Section: Meet Our Team ----- */
+    .team-section {
+        padding: 40px 10px;
+    }
+
+    .team-section .team {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 480px;
+        margin-top: 20px;
+    }
+
+    /* ----- Footer ----- */
+    footer .contents > .column {
+        padding-left: 10px;
+        align-items: center;
+    }
+
     footer .logo-text {
-        font-size: 70px;
+        font-size: 55px;
+    }
+
+    footer .contents {
+        padding-top: 30px;
+        padding-bottom: 5px;
+        gap: 20px;
+    }
+
+    footer .logo-container .text {
+        text-align: center;
+        max-width: 400px;
+    }
+
+    footer .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .nav-menu .menu-item a {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+
+    footer .copyright {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    footer .copyright .text {
+        font-size: 14px;
+    }
+
+    /* Scroll Up Button */
+    .scroll-up {
+        height: 35px;
+        width: 35px;
+        border-radius: 6px;
+        right: 15px;
+        bottom: 15px;
     }
 }
