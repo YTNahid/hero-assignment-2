@@ -128,6 +128,10 @@ header .nav-menu li {
     align-items: center;
 }
 
+.hero .hero-contents .heading {
+    max-width: 530px;
+}
+
 .hero .hero-contents .heading span {
     font-family: 'Miama', sans-serif;
     font-size: 160px;
@@ -496,13 +500,43 @@ footer .copyright .text {
     text-align: center;
 }
 
+/* -- Scroll Up Button -- */
+.scroll-up {
+    background: rgb(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 8px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+}
+
+.scroll-up:hover {
+    background: rgb(255, 255, 255, 0.6);
+}
+
 /* 
  * Responsive ------------------------------
  */
 
 @media only screen and (max-width: 576px) {
+    /* -- Buttons -- */
+    .button-global {
+        width: 224px;
+        font-size: 14px;
+        padding: 14px 0;
+    }
+
     /* Header */
     header .nav-menu {
         display: none;
+    }
+
+    /* Footer Logo */
+    footer .logo-text {
+        font-size: 70px;
     }
 }
