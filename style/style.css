@@ -373,6 +373,12 @@ header .nav-menu li {
     margin-top: 15px;
 }
 
+.bmi-section #result {
+    width: 100%;
+    color: white;
+    font-size: 16px;
+}
+
 /* ----- Section: Meet Our Team ----- */
 .team-section {
     padding-top: 90px;
@@ -430,6 +436,51 @@ header .nav-menu li {
 }
 .team-section .team .item6 {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/trainer6.png');
+}
+
+/* ----- Section: Client Testimonial ----- */
+.testimonials-section {
+    padding-bottom: 90px;
+}
+.testimonials-section .intro {
+    align-items: center;
+    max-width: 600px;
+}
+
+.testimonials-section .intro .heading,
+.testimonials-section .intro .text {
+    text-align: center;
+}
+
+.testimonials-section .testimonials {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.testimonials-section .testimonial {
+    align-items: center;
+    width: calc(50% - 30px / 2);
+    gap: 0;
+}
+
+.testimonials-section .testimonial img {
+    max-width: 80px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.testimonials-section .testimonial .message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 30px;
+    border-radius: 8px;
 }
 
 /* 
@@ -673,6 +724,22 @@ footer .copyright .text {
         grid-template-columns: repeat(1, 1fr);
         max-width: 480px;
         margin-top: 20px;
+    }
+
+    /* ----- Section: Client Testimonial ----- */
+    .testimonials-section {
+        padding-bottom: 40px;
+    }
+
+    .testimonials-section .testimonials {
+        margin-top: 10px;
+        gap: 20px;
+    }
+
+    .testimonials-section .testimonial .message {
+        height: auto;
+        min-height: 130px;
+        padding: 20px;
     }
 
     /* ----- Footer ----- */

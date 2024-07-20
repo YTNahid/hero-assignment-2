@@ -12,10 +12,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="./script.js"></script>
 </head>
 <body>
     <!-- ============================= This is Header ============================= -->
-     <header id="header" class="section">
+    <header id="header" class="section">
         <div class="row container">
             <div class="column logo-container">
                 <div class=""><a href="" class="logo-text">Fitness</a></div>
@@ -29,17 +31,18 @@
                 </ul>
             </div>
         </div>
-     </header>
+    </header>
 
 
     <!-- ============================= This is Main Body ============================= -->
-     <main id="main">
+    <main id="main">
         <!------------------------ Section: Hero -->
         <section id="home" class="section hero">
             <div class="row">
                 <div class="column col-1 hero-contents">
                     <h1 class="heading">Get body in <span>shape</span> & stay healthy</h1>
-                    <p class="text text-gap">A huge selection of health and fitness content, healthy recipes and transformation stories to help you get fit and stay fit!</p>
+                    <p class="text text-gap">A huge selection of health and fitness content, healthy recipes and
+                        transformation stories to help you get fit and stay fit!</p>
                     <div class="row btn-container">
                         <a href="#"><button class="button-global button-primary join">Join Club Now!</button></a>
                         <a href="#"><button class="button-global button-transparent download">Download App</button></a>
@@ -63,7 +66,8 @@
         <section id="service" class="section habits-section">
             <div class="column intro">
                 <h2 class="heading">Change Your Habits</h2>
-                <p class="text">We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym.</p>
+                <p class="text">We believe fitness should be accessible to everyone, everywhere, regardless of income or
+                    access to a gym.</p>
             </div>
             <div class="row habits">
                 <div class="column habit">
@@ -94,7 +98,8 @@
             <div class="row container">
                 <div class="column col-1 contents">
                     <h2 class="heading">Run an Extra Mile Easily</h2>
-                    <p class="text text-gap">Achieve your fitness goals with our expertly designed workout programs that make running an extra mile a breeze. Join now and transform.</p>
+                    <p class="text text-gap">Achieve your fitness goals with our expertly designed workout programs that
+                        make running an extra mile a breeze. Join now and transform.</p>
                     <a href=""><button class="button-global button-primary">Join Now</button></a>
                 </div>
                 <div class="column col-2 img-container">
@@ -107,7 +112,8 @@
         <section id="bmi" class="section bmi-section">
             <div class="column intro">
                 <h2 class="heading">BMI Calculator</h2>
-                <p class="text">Explore a variety of training programs and exercises tailored to your fitness level and goals. Whether you’re a beginner or an advanced athlete, we have something for everyone.</p>
+                <p class="text">Explore a variety of training programs and exercises tailored to your fitness level and
+                    goals. Whether you’re a beginner or an advanced athlete, we have something for everyone.</p>
             </div>
             <div class="section container">
                 <div class="row">
@@ -121,19 +127,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr id="underweight">
                                     <td>Below 18.5</td>
                                     <td>Underweight</td>
                                 </tr>
-                                <tr>
+                                <tr id="healthy">
                                     <td>18.5 - 24.9</td>
                                     <td>Healthy</td>
                                 </tr>
-                                <tr>
+                                <tr id="overweight">
                                     <td>25.0 - 29.9</td>
                                     <td>Overweight</td>
                                 </tr>
-                                <tr>
+                                <tr id="obese">
                                     <td>30.0 - and Above</td>
                                     <td>Obese</td>
                                 </tr>
@@ -142,22 +148,24 @@
                     </div>
                     <div class="column calc-container">
                         <h3 class="heading">Calculate your BMI</h3>
-                        <p class="text text-gap">We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. </p>
+                        <p class="text text-gap">We believe fitness should be accessible to everyone, everywhere,
+                            regardless of income or access to a gym. </p>
                         <form action="" class="bmi-form">
-                            <input type="text" class="col-half item" placeholder="Height/cm">
-                            <input type="text" class="col-half item" placeholder="Weight/kg">
-                            <input type="text" class="col-half item" placeholder="Age">
+                            <input id="height" type="text" class="col-half item" placeholder="Height/cm">
+                            <input id="weight" type="text" class="col-half item" placeholder="Weight/kg">
+                            <input id="age" type="text" class="col-half item" placeholder="Age">
                             <select name="" id="sex" class="col-half item">
                                 <option value="" disabled selected>Sex</option>
-                                <option value="">Male</option>
-                                <option value="">Female</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
                             </select>
-                            <select name="" id="" class="col-full item">
+                            <select name="" id="active" class="col-full item">
                                 <option value="" disabled selected>Select an activity factor</option>
-                                <option value="">Very Active</option>
-                                <option value="">Less Active</option>
+                                <option value="very-active">Very Active</option>
+                                <option value="less-active">Less Active</option>
                             </select>
                             <button type="submit" class="button-global button-primary">Calculate</button>
+                            <div id="result"></div>
                         </form>
                     </div>
                 </div>
@@ -168,7 +176,8 @@
         <section id="team" class="section team-section">
             <div class="column intro">
                 <h2 class="heading">Meet Our Team</h2>
-                <p class="text">Meet our team of professional trainers and fitness experts who are dedicated to helping you achieve your fitness goals. </p>
+                <p class="text">Meet our team of professional trainers and fitness experts who are dedicated to helping
+                    you achieve your fitness goals. </p>
             </div>
             <div class="team">
                 <div class="item item1">
@@ -197,16 +206,50 @@
                 </div>
             </div>
         </section>
-     </main>
+
+        <!------------------------ Section: Testimonials -->
+        <section id="testimonials" class="section testimonials-section">
+            <div class="column intro">
+                <h2 class="heading">Client Testimonials</h2>
+                <p class="text">Discover why our clients choose us. Read their feedback and experience firsthand the exceptional service we provide.</p>
+            </div>
+            <div class="row testimonials">
+                <div class="column testimonial">
+                    <div class="message">
+                        <p class="text">Ekhan theke ami body fitness training nei arki. Eder service khub valo arki. Sobar jonno ederke ami recommend kore jacchi arki.
+                        </p>
+                    </div>
+                    <img src="./images/stars.svg" alt="stars">
+                    <p class="text name">Jhankar Mahbub</p>
+                </div>
+                <div class="column testimonial">
+                    <div class="message">
+                        <p class="text">Ebarer Songram Muktir Songram! Ebarer Songram Shadhinotar Songram! Sokole ekhane training niye judde jhapiye porun. Bijoy asbei. Rokto jokhn diyechi rokto aro debo!</p>
+                    </div>
+                    <img src="./images/stars.svg" alt="stars">
+                    <p class="text name">Sheikh Mujib</p>
+                </div>
+                <div class="column testimonial">
+                    <div class="message">
+                        <p class="text">They trained me hard enough and I became the strongest. Then I participated in the tournament and defeated other universes and saved our beloved universe.
+                        </p>
+                    </div>
+                    <img src="./images/stars.svg" alt="stars">
+                    <p class="text name">Son Goku</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
     <!-- ============================= This is Footer ============================= -->
-     <footer id="footer">
+    <footer id="footer">
         <section class="section">
             <div class="row contents">
                 <div class="column logo-container">
                     <div class=""><a href="" class="logo-text">Fitness</a></div>
-                    <p class="text">We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts.</p>
+                    <p class="text">We believe fitness should be accessible to everyone, everywhere, regardless of
+                        income or access to a gym. With hundreds of professional workouts.</p>
                 </div>
                 <div class="column menu-container">
                     <h3 class="heading">Quick Links</h3>
@@ -231,10 +274,11 @@
                 <p class="text">All right reserved @Fitness 2024</p>
             </div>
         </section>
-     </footer>
+    </footer>
 
-     <!-- Scroll Up -->
-     <a href="#home" class="scroll-up" title="Scroll Up">^</a>
-    
+    <!-- Scroll Up -->
+    <a href="#home" class="scroll-up" title="Scroll Up">^</a>
+
 </body>
+
 </html>
