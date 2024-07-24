@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.style.opacity = '1';
             });
         }
-        if (result > 30) {
+        if (result >= 30) {
             obese.forEach(function (e) {
                 e.style.background = 'white';
                 e.style.color = 'black';
