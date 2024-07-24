@@ -373,6 +373,12 @@ header .nav-menu li {
     margin-top: 15px;
 }
 
+.bmi-section .highlight td {
+    background: white;
+    opacity: 1;
+    color: black;
+}
+
 .bmi-section #result {
     width: 100%;
     color: white;

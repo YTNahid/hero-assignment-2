@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
     data.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const height = document.getElementById('height').value;
-        const weight = document.getElementById('weight').value;
-        const age = document.getElementById('age').value;
-        const sex = document.getElementById('sex').value;
-        const active = document.getElementById('active').value;
+        let height = document.getElementById('height').value;
+        let weight = document.getElementById('weight').value;
+        let age = document.getElementById('age').value;
+        let sex = document.getElementById('sex').value;
+        let active = document.getElementById('active').value;
 
-        const showResult = document.getElementById('result');
+        let showResult = document.getElementById('result');
 
         if (isNaN(height) || isNaN(weight) || isNaN(age) || height === '' || weight === '' || age === '') {
             alert('Please put valid numbers');
@@ -23,50 +23,48 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const result = height;
+        let BMI = weight / ((height / 100) * (height / 100));
+        let BMR = null;
+        let TDEE = null; //Total Daily Energy Expenditure
+        let message = null;
 
-        showResult.innerHTML = 'Your BMI is: ' + result;
+        if (sex === 'male') BMR = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
+        if (sex === 'female') BMR = 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
 
-        let td = document.querySelectorAll('td');
-
-        td.forEach((e) => {
-            e.style.background = 'transparent';
-            e.style.color = 'white';
-            e.style.opacity = '.5';
-        });
-
-        let underweight = document.querySelectorAll('#underweight td');
-        let healthy = document.querySelectorAll('#healthy td');
-        let overweight = document.querySelectorAll('#overweight td');
-        let obese = document.querySelectorAll('#obese td');
-
-        if (result < 18.5) {
-            underweight.forEach((e) => {
-                e.style.background = 'white';
-                e.style.color = 'black';
-                e.style.opacity = '1';
-            });
+        if (active === 'not-active') {
+            TDEE = BMR * 1.2;
+            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
         }
-        if (result >= 18.5 && result <= 24.9) {
-            healthy.forEach(function (e) {
-                e.style.background = 'white';
-                e.style.color = 'black';
-                e.style.opacity = '1';
-            });
+        if (active === 'lightly-active') {
+            TDEE = BMR * 1.375;
+            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
         }
-        if (result >= 25 && result <= 29.9) {
-            overweight.forEach(function (e) {
-                e.style.background = 'white';
-                e.style.color = 'black';
-                e.style.opacity = '1';
-            });
+        if (active === 'moderately-active') {
+            TDEE = BMR * 1.55;
+            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
         }
-        if (result >= 30) {
-            obese.forEach(function (e) {
-                e.style.background = 'white';
-                e.style.color = 'black';
-                e.style.opacity = '1';
-            });
+        if (active === 'very-active') {
+            TDEE = BMR * 1.72;
+            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
         }
+        if (active === 'super-active') {
+            TDEE = BMR * 1.9;
+            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
+        }
+
+        showResult.innerHTML = 'Your BMI is: ' + BMI.toFixed(2) + '<br>' + message;
+
+        let row = document.querySelectorAll('tr');
+        row.forEach((e) => e.classList.remove('highlight'));
+
+        let underweight = document.querySelector('#underweight');
+        let healthy = document.querySelector('#healthy');
+        let overweight = document.querySelector('#overweight');
+        let obese = document.querySelector('#obese');
+
+        if (BMI < 18.5) underweight.classList.add('highlight');
+        if (BMI >= 18.5 && BMI <= 24.9) healthy.classList.add('highlight');
+        if (BMI >= 25 && BMI <= 29.9) overweight.classList.add('highlight');
+        if (BMI >= 30) obese.classList.add('highlight');
     });
 });
