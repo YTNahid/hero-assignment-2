@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Values cannot be 0');
             return;
         } else if (sex === '' || active === '') {
-            alert('Please select all the fields');
+            alert('Please select your sex and activity');
             return;
         }
 
