@@ -4,67 +4,56 @@ document.addEventListener('DOMContentLoaded', function () {
     data.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        let height = document.getElementById('height').value;
-        let weight = document.getElementById('weight').value;
-        let age = document.getElementById('age').value;
-        let sex = document.getElementById('sex').value;
-        let active = document.getElementById('active').value;
+        const height = document.getElementById('height').value;
+        const weight = document.getElementById('weight').value;
+        const age = document.getElementById('age').value;
+        const sex = document.getElementById('sex').value;
+        const active = document.getElementById('active').value;
+        const showResult = document.getElementById('result');
 
-        let showResult = document.getElementById('result');
-
-        if (isNaN(height) || isNaN(weight) || isNaN(age) || height === '' || weight === '' || age === '') {
+        if ([height, weight, age].some(isNaN)) {
             alert('Please put valid numbers');
             return;
-        } else if (height === '0' || weight === '0' || age === '0') {
-            alert('Values cannot be 0');
+        } else if ([height, weight, age].some((val) => !val)) {
+            alert('Fields Cannot be empty');
             return;
-        } else if (sex === '' || active === '') {
+        } else if ([height, weight, age].some((val) => val <= 0)) {
+            alert('Values cannot be less than or equal to 0');
+            return;
+        } else if (!sex || !active) {
             alert('Please select your sex and activity');
             return;
         }
 
-        let BMI = weight / ((height / 100) * (height / 100));
-        let BMR = null;
-        let TDEE = null; //Total Daily Energy Expenditure
-        let message = null;
+        const BMI = weight / (height / 100) ** 2;
+        const BMR = sex === 'male' ? 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age : 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
 
-        if (sex === 'male') BMR = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
-        if (sex === 'female') BMR = 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
+        const activityMultipliers = {
+            'not-active': 1.2,
+            'lightly-active': 1.375,
+            'moderately-active': 1.55,
+            'very-active': 1.72,
+            'super-active': 1.9,
+        };
 
-        if (active === 'not-active') {
-            TDEE = BMR * 1.2;
-            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
-        }
-        if (active === 'lightly-active') {
-            TDEE = BMR * 1.375;
-            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
-        }
-        if (active === 'moderately-active') {
-            TDEE = BMR * 1.55;
-            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
-        }
-        if (active === 'very-active') {
-            TDEE = BMR * 1.72;
-            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
-        }
-        if (active === 'super-active') {
-            TDEE = BMR * 1.9;
-            message = 'Your BMR is: ' + BMR.toFixed(0) + ', You Need ' + TDEE.toFixed(0) + ' calories/day';
-        }
+        const caloriesNeeded = BMR * activityMultipliers[active];
 
-        showResult.innerHTML = 'Your BMI is: ' + BMI.toFixed(2) + '<br>' + message;
+        const messageBMI = `Your BMI is: ${BMI.toFixed(2)}`;
+        const messageBMR = `Your BMR is: ${BMR.toFixed(0)}, You Need ${caloriesNeeded.toFixed(0)} calories/day`;
 
-        let row = document.querySelectorAll('tr');
-        row.forEach((e) => e.classList.remove('highlight'));
+        showResult.innerHTML = `${messageBMI} <br> ${messageBMR}`;
 
-        let underweight = document.querySelector('#underweight');
-        let healthy = document.querySelector('#healthy');
-        let overweight = document.querySelector('#overweight');
-        let obese = document.querySelector('#obese');
+        const row = document.querySelectorAll('tr');
+        row.forEach((el) => el.classList.remove('highlight'));
+
+        const underweight = document.querySelector('#underweight');
+        const healthy = document.querySelector('#healthy');
+        const overweight = document.querySelector('#overweight');
+        const obese = document.querySelector('#obese');
 
         if (BMI < 18.5) underweight.classList.add('highlight');
-        if (BMI >= 18.5 && BMI <= 24.9) healthy.classList.add('highlight');
-        if (BMI >= 25 && BMI <= 29.9) overweight.classList.add('highlight');
-        if (BMI >= 30) obese.classList.add('highlight');
+        else if (BMI >= 18.5 && BMI <= 24.9) healthy.classList.add('highlight');
+        else if (BMI >= 25 && BMI <= 29.9) overweight.classList.add('highlight');
+        else if (BMI >= 30) obese.classList.add('highlight');
     });
 });
