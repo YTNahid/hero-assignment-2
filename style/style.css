@@ -93,10 +93,12 @@ header .nav-menu .menu-item a {
 
 header .nav-menu .menu-item :hover {
     background-color: var(--primary-color);
+    font-weight: 700;
 }
 
 header .nav-menu .menu-item.active a {
     background-color: var(--primary-color);
+    font-weight: 700;
 }
 
 header .nav-menu li {
